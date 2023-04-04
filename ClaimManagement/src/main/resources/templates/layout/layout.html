@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+  <head th:replace="fragments/header :: header">
+	  <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Stellar Admin</title>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav th:replace="fragments/navigation :: navigation">
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav th:replace="fragments/sidebar :: sidebar">
+          
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+		  <div layout:fragment="content">
+			  <h1>Static content for prototyping purposes only</h1>
+		        <p>
+		          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		          Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+		          Phasellus et placerat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		          Praesent scelerisque neque neque, ac elementum quam dignissim interdum.
+		          Phasellus et placerat elit.
+		        </p>
+		  </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer th:replace="fragments/footer :: footer">
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <div th:replace="fragments/scriptfile :: scriptfile"></div>
+    <!-- End custom js for this page -->
+  </body>
+</html>

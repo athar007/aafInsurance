@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Stellar Admin</title>
+  </head>
+  <body>
+   <div th:fragment="scriptfile">
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script th:src="@{/vendors/chart.js/Chart.min.js}"></script>
+    <script th:src="@{/vendors/moment/moment.min.js}"></script>
+    <script th:src="@{/vendors/daterangepicker/daterangepicker.js}"></script>
+    <script th:src="@{/vendors/chartist/chartist.min.js}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script th:src="@{/js/off-canvas.js}"></script>
+    <script th:src="@{/js/misc.js}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script th:src="@{/js/dashboard.js}"></script>
+   </div>
+  </body>
+  </html>

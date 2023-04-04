@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Admin Login</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="login-page" id="login">
+    <form th:action="@{/aafinsurance/admin/login}" th:object="${user}" method="post">
+        <h3>Are you Admin?</h3>
+        <h4>Login Here</h4>
+        <div th:if="${success_msg}" th:text="${success_msg}"></div>
+        <div th:if="${error_msg}" th:text="${error_msg}"></div>
+
+        <label for="username">Username</label>
+        <input type="text" name="userName" placeholder="Email or Phone" class="form-control" th:classappend="${#fields.hasErrors('userName')?' is-invalid':''}" th:value="${user.userName}" id="username">
+        <div th:each="err :${#fields.errors('userName')}" th:text="${err}" class="invalid-feedback"></div>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password"  class="form-control" th:classappend="${#fields.hasErrors('password')?' is-invalid':''}" th:value="${user.password}" id="password">
+        <div th:each="err :${#fields.errors('password')}" th:text="${err}" class="invalid-feedback"></div>
+
+        <button type="submit">Log In</button>
+    </form>
+    </div>
+</body>
+</html>
